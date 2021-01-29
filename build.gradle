@@ -1,0 +1,45 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+springBoot {
+    mainClassName = 'com.machrist.kafka.consumer.Application'
+    buildInfo() {
+        properties {
+            name = 'Java Kafka Consumer'
+        }
+    }
+}
+
+version = '0.0.1'
+group = 'com.machrist'
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    maven {
+        url "http://packages.confluent.io/maven/"
+    }
+}
+
+dependencies {
+
+    implementation platform("org.springframework.boot:spring-boot-dependencies:${spring_boot_version}")
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation "org.apache.kafka:kafka_2.12:${kafka_version}"
+    implementation "io.confluent:kafka-avro-serializer:${kafka_avro_version}"
+    implementation "org.apache.avro:avro:${avro_version}"
+
+    implementation "ch.qos.logback:logback-classic:${logback_version}"
+    implementation "org.projectlombok:lombok:${lombok_version}"
+    annotationProcessor "org.projectlombok:lombok:${lombok_version}"
+}

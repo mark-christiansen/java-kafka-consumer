@@ -1,0 +1,12 @@
+# Application specific properties
+application:
+  consumer:
+    bootstrap.servers: kafka.ap-southeast-2.dev.stream.idscloud.io:9092
+    #bootstrap.servers: broker-0.ap-southeast-2.dev.stream.idscloud.io:9092,broker-1.ap-southeast-2.dev.stream.idscloud.io:9092,broker-2.ap-southeast-2.dev.stream.idscloud.io:9092,broker-3.ap-southeast-2.dev.stream.idscloud.io:9092,broker-4.ap-southeast-2.dev.stream.idscloud.io:9092
+    schema.registry.url: https://kafka.ap-southeast-2.dev.stream.idscloud.io:8081
+    #schema.registry.url: https:/schema-0.ap-southeast-2.dev.stream.idscloud.io:8081,https://schema-1.ap-southeast-2.dev.stream.idscloud.io:8081
+    ssl.keystore.location: D:/Users/Mark24/data/cisco/ap-dev/cisco.keystore.jks
+    ssl.keystore.password: 
+    ssl.key.password: 
+    ssl.truststore.location: D:/Users/Mark24/data/cisco/ap-dev/cisco.truststore.jks
+    ssl.truststore.password: 
