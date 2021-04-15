@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Kafka Consumer" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.machrist.kafka.consumer.Application" />
+    <module name="java-kafka-consumer.main" />
+    <option name="PROGRAM_PARAMETERS" value="-topic qa.raw.ordered.cda.policy.all -log false -table pc_pacost" />
+    <option name="VM_PARAMETERS" value="-Dspring.profiles.active=qa" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.machrist.kafka.consumer.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

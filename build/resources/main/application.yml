@@ -1,0 +1,9 @@
+# Application specific properties
+application:
+  consumer:
+    client.id: my-client
+    group.id: my-group
+    auto.offset.reset: earliest
+    key.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+    value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+    security.protocol: PLAINTEXT

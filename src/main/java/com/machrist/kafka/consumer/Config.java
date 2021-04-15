@@ -19,10 +19,18 @@ public class Config {
     @Bean
     public KafkaConsumer kafkaConsumer() {
         Properties props = consumerProperties();
-        System.setProperty("javax.net.ssl.keyStore", (String) props.get("ssl.keystore.location"));
-        System.setProperty("javax.net.ssl.keyStorePassword", (String) props.get("ssl.keystore.password"));
-        System.setProperty("javax.net.ssl.trustStore", (String) props.get("ssl.truststore.location"));
-        System.setProperty("javax.net.ssl.trustStorePassword", (String) props.get("ssl.truststore.password"));
+        if (props.get("ssl.keystore.location") != null) {
+            System.setProperty("javax.net.ssl.keyStore", (String) props.get("ssl.keystore.location"));
+        }
+        if (props.get("ssl.keystore.password") != null) {
+            System.setProperty("javax.net.ssl.keyStorePassword", (String) props.get("ssl.keystore.password"));
+        }
+        if (props.get("ssl.truststore.location") != null) {
+            System.setProperty("javax.net.ssl.trustStore", (String) props.get("ssl.truststore.location"));
+        }
+        if (props.get("ssl.truststore.password") != null) {
+            System.setProperty("javax.net.ssl.trustStorePassword", (String) props.get("ssl.truststore.password"));
+        }
         return new KafkaConsumer<>(consumerProperties());
     }
 }

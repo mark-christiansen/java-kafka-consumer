@@ -6,4 +6,4 @@ application:
     auto.offset.reset: earliest
     key.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
     value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
-    security.protocol: SSL
+    security.protocol: PLAINTEXT
