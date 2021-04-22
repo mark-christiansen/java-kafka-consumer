@@ -1,4 +1,4 @@
-# QA specific properties
+# UAT specific properties
 application:
   consumer:
     bootstrap.servers: pkc-mvx01.us-east-2.aws.confluent.cloud:9092

@@ -32,7 +32,6 @@ repositories {
 }
 
 dependencies {
-
     implementation platform("org.springframework.boot:spring-boot-dependencies:${spring_boot_version}")
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation "org.apache.kafka:kafka_2.12:${kafka_version}"
@@ -43,5 +42,4 @@ dependencies {
     implementation "org.projectlombok:lombok:${lombok_version}"
     annotationProcessor "org.projectlombok:lombok:${lombok_version}"
     implementation "commons-cli:commons-cli:${commons_cli_version}"
-
 }
