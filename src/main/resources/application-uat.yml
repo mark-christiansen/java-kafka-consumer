@@ -4,5 +4,7 @@ application:
     bootstrap.servers: pkc-mvx01.us-east-2.aws.confluent.cloud:9092
     security.protocol: SASL_SSL
     sasl.mechanism: PLAIN
-    sasl.jaas.config: ${SASL_JAAS_CONFIG}
-    schema.registry.url: ${SCHEMA_REGISTRY_URL}
+    sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username='${BROKER_USER}' password='${BROKER_PASSWORD}';
+    schema.registry.url: https://psrc-q25x7.us-east-2.aws.confluent.cloud
+    basic.auth.credentials.source: USER_INFO
+    basic.auth.user.info: ${SCHEMA_USER}:${SCHEMA_PASSWORD}
