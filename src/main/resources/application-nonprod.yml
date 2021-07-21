@@ -5,6 +5,4 @@ application:
     security.protocol: SASL_SSL
     sasl.mechanism: PLAIN
     sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username='${BROKER_USER}' password='${BROKER_PASSWORD}';
-    schema.registry.url: https://psrc-q25x7.us-east-2.aws.confluent.cloud
-    basic.auth.credentials.source: USER_INFO
-    basic.auth.user.info: ${SCHEMA_USER}:${SCHEMA_PASSWORD}
+    schema.registry.url: http://internal-k8s-nonprod-schemare-8a16861d78-532430218.us-east-2.elb.amazonaws.com
