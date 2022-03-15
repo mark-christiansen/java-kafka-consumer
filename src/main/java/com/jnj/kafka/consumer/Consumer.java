@@ -26,6 +26,7 @@ import java.util.Map;
 public class Consumer {
 
     private static final Logger log = LoggerFactory.getLogger(Consumer.class);
+    private static final long COMMIT_TIMEOUT_SECS = 10;
 
     private final KafkaConsumer<Long, GenericRecord> consumer;
     private final String topicName;
@@ -55,6 +56,7 @@ public class Consumer {
                         }
                     }
                 });
+                consumer.commitSync(Duration.ofSeconds(COMMIT_TIMEOUT_SECS));
             }
         } catch (Exception e) {
             log.error("Error consuming messages", e);
