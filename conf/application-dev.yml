@@ -1,0 +1,32 @@
+# comsumer properties
+consumer:
+  group.id: client-consumer
+  # increase for higher throughput
+  max.poll.records: 500
+  # prevent out of order messages when not using an idempotent producer
+  max.in.flight.requests.per.connection: 1
+  # higher for more throughput, 1 for less latency
+  fetch.min.bytes: 1
+  # reduce for lower latency
+  fetch.max.wait.ms: 500
+  # manually commit for high durability
+  enable.auto.commit: false
+  # avoid soft failures due to network latency
+  session.timeout.ms: 30000
+  avro.use.logical.type.converters: true
+  key.deserializer: org.apache.kafka.common.serialization.LongDeserializer
+  value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+  bootstrap.servers: localhost:9092
+  security.protocol: SASL_SSL
+  ssl.truststore.location: /Users/markchristiansen/projects/confluent/docker/certs/client.kafka_network.truststore.jks
+  ssl.truststore.password: serverpassword
+  sasl.mechanism: PLAIN
+  sasl.jaas.config: >-
+    org.apache.kafka.common.security.plain.PlainLoginModule required
+    username="client"
+    password="client-secret";
+  schema.registry.url: https://localhost:8081
+  schema.registry.ssl.truststore.location: /Users/markchristiansen/projects/confluent/docker/certs/client.kafka_network.truststore.jks
+  schema.registry.ssl.truststore.password: serverpassword
+  basic.auth.credentials.source: USER_INFO
+  basic.auth.user.info: client:client-secret
