@@ -1,6 +1,4 @@
 # java-kafka-consumer
-Sample Java Kafka Consumer
-
 To run the script make sure that you have the compiled jar file "java-kafka-consumer-0.0.1.jar" in the same directory as 
 the shell script "consumer.sh". In that same directory create a "conf" directory and add an "application-<env>.yaml" to 
 that directory, where <env> is an arbitrary name you want to give the Kafka environment you are consuming from. See
